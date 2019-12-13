@@ -1,15 +1,741 @@
 <template>
-  <h1>Home Page</h1>
+  <div>
+    <header>
+      <div class="header-container">
+        <div class="menu">
+          <ul>
+            <li><a href="#">навыки</a></li>
+            <li><a href="#">образование</a></li>
+            <li><a href="#">работы</a></li>
+            <li><a href="#">увлечения</a></li>
+            <li><a href="#">контакты</a></li>
+          </ul>
+        </div>
+        <div class="about-container">
+          <div class="about-title">
+            <p>Тимко Тимофей</p>
+            <p>Frontend Developer</p>
+          </div>
+          <div class="about">
+            <div class="photo">
+              <img alt="avatar" src="assets/avatar.jpg">
+            </div>
+            <div class="description">
+              <p>г. Новосибирск</p>
+              <p>мне 25 лет</p>
+              <p/>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="skills-container">
+        <p class="title">ключевые навыки</p>
+
+        <div class="main-skills skillBox">
+
+          <div class="skill">
+            <div class="html image"></div>
+            <p>HTML5</p>
+          </div>
+          <div class="skill">
+            <div class="css image"></div>
+            <p>CSS3</p>
+          </div>
+          <div class="skill">
+            <div class="js image"></div>
+            <p>Java Script</p>
+          </div>
+        </div>
+
+        <div class="other-skills skillBox">
+          <div class="skill">
+            <div class="photoshop image"></div>
+            <p>Photoshop</p>
+          </div>
+          <div class="skill">
+            <div class="illustrator image"></div>
+            <p>Illustrator</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="education-container">
+        <p class="title">Образование</p>
+
+        <div class="educations">
+          <div class="first-education education">
+            <img alt="ASU" src="assets/asu.png">
+            <div class="info">
+              <p>АлтГУ</p>
+              <p>Факультет прикладной математики и информатики</p>
+              <p>Бакалавр</p>
+            </div>
+
+          </div>
+          <div class="second-education education">
+            <img alt="NSTU" src="assets/NSTU.png">
+            <div class="info">
+              <p>НГТУ</p>
+              <p>Факультет прикладной математики и информатики</p>
+              <p>Магистр</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="works-container"></div>
+
+      <div class="hobby-container">
+        <p class="title">Увлечения</p>
+
+        <div class="hobbys">
+          <div class="hobby">
+            <div class="img-container hob1"></div>
+            <div class="hobby-text">
+              <p>Разработка</p>
+              <p>Разработка казуальных игр и приложений для мобильной и ПК платформы устройств семейства
+                Windows.</p>
+            </div>
+          </div>
+          <div class="hobby">
+            <div class="img-container hob2"></div>
+            <div class="hobby-text">
+              <p>Рисование</p>
+              <p>Рисунки в стиле "графика" карандашом, шариковой ручкой и маркерами.</p>
+            </div>
+          </div>
+          <div class="hobby">
+            <div class="img-container hob3"></div>
+            <div class="hobby-text">
+              <p>Дизайн</p>
+              <p>Разработка интерфейсов сайтов, приложений и игр, а также создание уникальных логотипов.</p>
+            </div>
+          </div>
+          <div class="hobby">
+            <div class="img-container hob4"></div>
+            <div class="hobby-text">
+              <p>Занятия спортом</p>
+              <p>Регулярные занятия в тренажерном зале со свободными весами и на тренажерах.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <footer>
+      <div class="contacts-container">
+        <p class="title">Контакты</p>
+        <div class="mail">
+          <p>Электронная почта: </p>
+          <a href="#">t.t.home@live.ru</a>
+        </div>
+        <p class="copyright">Тимофей Тимко 2018</p>
+      </div>
+
+      <div class="navButton">
+        <i class="arrow up"/>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
     export default {
-        name: 'AppHome'
+        name: 'AppHome',
+        data() {
+            return {
+                avatar: '',
+
+            };
+        }
     };
 </script>
 
-<style scoped>
-  h1  {
-    color: green;
+<style lang="scss" scoped>
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    height: 100%;
+  }
+
+  .header-container {
+    background: url(/assets/bg.jpg) no-repeat fixed center;
+    background-size: cover;
+  }
+
+  .menu ul {
+    opacity: 0.9;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .menu ul li a {
+    border-bottom: 2px solid transparent;
+    font-weight: lighter;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    transition: border-bottom-color 200ms ease;
+  }
+
+  .menu ul li a:hover {
+    border-bottom: 2px solid white;
+
+  }
+
+  .about-container {
+    padding-top: 70px;
+    padding-bottom: 100px;
+    max-height: 100%;
+    position: relative;
+    max-width: 60%;
+    min-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /*.about-container:before {
+      content: "Привет";
+      letter-spacing: 15px;
+      text-transform: uppercase;
+      font-weight: lighter;
+      color: white;
+      font-size: 2.5rem;
+  }*/
+
+  .about-container:after {
+    box-sizing: border-box;
+    height: 50px;
+    width: 50px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+    display: block;
+    content: '';
+    margin: 100px auto;
+    /*margin: 100px 15px 30px;*/
+    /*
+    display: block;
+    content: "листайте ниже, чтобы узнать больше";
+    font-weight: lighter;
+    color: white;
+    font-size: 1.2rem;
+    margin: 100px 15px 30px;
+    opacity: 0.7;*/
+  }
+
+  .about {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-title p {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-title p:first-child {
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+  }
+
+  .about-title p:last-child {
+    font-size: 1.1rem;
+  }
+
+  .about-title p:last-child:before {
+    content: '';
+    background: white;
+    width: 140px;
+    height: 3px;
+    margin-right: 20px;
+  }
+
+  .about-title p:last-child:after {
+    content: '';
+    background: white;
+    width: 140px;
+    height: 3px;
+    margin-left: 20px;
+  }
+
+  .about .photo img {
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    /*transform: rotate(90deg);*/
+    max-height: 200px;
+    min-height: 100px;
+    box-sizing: border-box;
+  }
+
+  .about .description {
+    margin-left: 60px;
+    text-align: left;
+  }
+
+  .about .description p {
+    color: white;
+    font-size: 1.8rem;
+    opacity: 0.7;
+    font-weight: lighter;
+  }
+
+  .about .description p:first-child {
+    opacity: 1;
+    font-weight: normal;
+  }
+
+  main {
+    position: relative;
+    background: white;
+  }
+
+  main:before {
+    content: "";
+    position: absolute;
+    height: 110px;
+    top: -100px;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    background: url(/assets/triangle.png) no-repeat;
+    background-size: cover;
+  }
+
+  .skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title {
+    letter-spacing: 6px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 25px;
+    padding: 90px 20px 60px 20px;
+    text-align: center;
+  }
+
+  .skillBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: lightgray 1px 1px 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .main-skills {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: lightgray 1px 1px 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;*/
+  }
+
+  .skill {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    padding: 15px 30px;
+    max-width: 360px;
+    z-index: 3;
+    background: white;
+    cursor: pointer;
+  }
+
+  .skill:hover {
+    background: whitesmoke;
+    transition: 200ms ease;
+  }
+
+  .skill:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .skill:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .skill p {
+    margin-top: 20px;
+    font-weight: 700;
+  }
+
+  .skill-about {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.51);
+
+  }
+
+  .skill-about ul li {
+    color: white;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+  .image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .html {
+    background: url(/assets/main-skills.png) no-repeat 10px 100%;
+    background-size: cover;
+  }
+
+  .css {
+    background: url(/assets/main-skills.png) no-repeat -360px 100%;
+    background-size: cover;
+  }
+
+  .js {
+    background: url(/assets/main-skills.png) no-repeat center 100%;
+    background-size: cover;
+  }
+
+  .other-skills {
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+
+  .other-skills .skill .image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .photoshop {
+    background: url(/assets/psCC.png) no-repeat 100% 100%;
+    background-size: cover;
+  }
+
+  .illustrator {
+    background: url(/assets/ilCC.png) no-repeat 100% 100%;
+    background-size: cover;
+  }
+
+  .education-container {
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+    background: url(/assets/books.jpg) no-repeat fixed center;
+    height: 100%;
+    background-size: cover;
+  }
+
+  .education-container:before {
+    transform: rotate(180deg);
+    content: "";
+    position: absolute;
+    height: 110px;
+    top: -10px;
+    left: 0;
+    right: 0;
+    background: url(/assets/triangle.png) no-repeat;
+    background-size: cover;
+  }
+
+  .education-container p {
+    color: white;
+  }
+
+  .educations {
+    display: flex;
+    max-width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .educations img {
+    width: auto;
+    height: 136px;
+  }
+
+  .first-education {
+    border-top-left-radius: 15px;
+  }
+
+  .education {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    background: rgba(245, 245, 245, 0.2);
+    padding: 15px 15px 50px;
+    transition: 250ms ease;
+  }
+
+  .hobby-container {
+    background: #d2d2d2;
+    padding-bottom: 50px;
+  }
+
+  .hobbys {
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    transition: 250ms ease;
+  }
+
+  .hobby {
+    flex: 1;
+    flex-basis: 45%;
+    min-width: 340px;
+    position: relative;
+    background: #ececec;
+    margin: 18px 10px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: 1px solid #bfbfbf;
+    transition: 250ms ease;
+  }
+
+  .hobby-text {
+    padding: 20px;
+  }
+
+  .hob1 {
+    background: url(/assets/img1.png) no-repeat;
+  }
+
+  .hob2 {
+    background: url(/assets/img2.jpg) no-repeat;
+  }
+
+  .hob3 {
+    background: url(/assets/img3.jpg) no-repeat;
+  }
+
+  .hob4 {
+    background: url(/assets/img4.jpg) no-repeat;
+
+  }
+
+  .img-container {
+    box-shadow: #000000 1px 1px 150px 11px inset;
+    background-size: auto 100%;
+    margin-right: 15px;
+    float: left;
+    clear: both;
+    width: 150px;
+    height: 240px;
+    /*background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300px;*/
+  }
+
+  .hobby p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    margin-left: 20px;
+    display: inline-block;
+    text-align: left;
+    font-weight: lighter;
+    font-size: 1.2rem;
+  }
+
+  .info p {
+    margin-top: 20px;
+  }
+
+  .info p:first-child {
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+
+  .info p:last-child {
+    font-style: italic;
+  }
+
+  .second-education {
+    border-left: 1px solid rgba(245, 245, 245, 0.15);
+    border-top-right-radius: 15px;
+  }
+
+  .contacts-container {
+    text-align: center;
+    background: -webkit-linear-gradient(to bottom, #1b1b1b, #333333); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #0e0e0e, #333333);
+  }
+
+  .contacts-container p, a {
+    color: white;
+  }
+
+  .contacts-container .mail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mail a {
+    margin-left: 20px;
+    opacity: 0.8;
+  }
+
+  .copyright {
+    padding: 30px;
+    font-weight: lighter;
+    opacity: 0.5;
+
+  }
+
+  .arrow {
+    width: 20px;
+    height: 20px;
+    border: solid rgba(0, 0, 0, 0.61);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    /*padding: 3px;*/
+    margin-top: 10px;
+  }
+
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+
+  .navButton {
+    background: rgba(175, 175, 175, 0.2);
+    bottom: 40px;
+    left: 15%;
+    z-index: 1000;
+    opacity: 0;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: rgba(20, 20, 20, 1) 0 3px 15px;
+    transition: background, opacity, 250ms ease;
+  }
+
+  .navButton:hover {
+    background: rgba(175, 175, 175, 0.6);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .hobby {
+      flex-basis: 100%;
+    }
+
+    .educations {
+      width: 95%;
+    }
+
+    .education {
+      overflow: hidden;
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .menu ul {
+      flex-direction: column;
+      padding-top: 10px;
+    }
+
+    .menu ul li {
+      margin-top: 10px;
+
+    }
+
+    .menu ul li a {
+      text-align: center;
+      display: block;
+    }
+
+    .about {
+      margin: 15px;
+    }
+
+    .about .description {
+      margin-left: 20px;
+    }
+
+    .educations {
+      max-width: 100%;
+    }
+
+    .education {
+      flex-direction: column;
+      padding: 20px 5px 25px;
+    }
+
+    .skillBox {
+      flex-direction: column;
+    }
+
+    .skill:first-child {
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+    }
+
+    .skill:last-child {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 10px;
+    }
+
+    .photo img {
+      width: 150px;
+    }
+
+    .hobbys {
+      max-width: 100%;
+    }
+
+    .hobby {
+      flex-basis: 100%;
+    }
+
+    .navButton {
+      left: 5%;
+    }
   }
 </style>
